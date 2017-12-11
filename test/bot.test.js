@@ -388,6 +388,13 @@ describe('Bot', function () {
     this.bot.parseText(':train:').should.equal(':train:');
   });
 
+  it('should convert emojis to unicode when enabled in options', function () {
+    this.bot.emojiToUnicode = true;
+    this.bot.parseText(':smile:').should.equal(':)');
+    this.bot.parseText(':train:').should.equal('🚋');
+    this.bot.parseText(':eucrheaourcoehulr:').should.equal(':eucrheaourcoehulr:');
+  });
+
   it('should hide usernames for commands', function () {
     const text = '!test command';
     const message = {
