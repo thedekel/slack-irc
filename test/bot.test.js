@@ -385,7 +385,8 @@ describe('Bot', function () {
 
   it('should parse emojis correctly', function () {
     this.bot.parseText(':smile:').should.equal(':)');
-    this.bot.parseText(':train:').should.equal(':train:');
+    this.bot.parseText(':train:').should.equal('🚋');
+    this.bot.parseText(':eucrheaourcoehulr:').should.equal(':eucrheaourcoehulr:');
   });
 
   it('should hide usernames for commands', function () {
